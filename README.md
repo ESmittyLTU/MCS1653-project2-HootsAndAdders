@@ -10,9 +10,9 @@
 ---
 
 # Required ReadMe Info for ALL MCS1653 Projects
-* **Project**   - 
-* **Your Name** - 
-* **Date**      - 
+* **Project**   - Tower Defense - Hoots and Adders
+* **Your Name** - Eli Smith
+* **Date**      - February 25, 2025
 
 <br>
 
