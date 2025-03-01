@@ -5,7 +5,7 @@ using UnityEngine;
 public class Buildable : MonoBehaviour
 {
     public Material BaseMaterial, HighlightMaterial;
-    public GameObject BuildMenu;
+    //public GameObject BuildMenu;
 
     public void OnMouseOver()
     {
@@ -19,6 +19,6 @@ public class Buildable : MonoBehaviour
 
     public void OnMouseDown()
     {
-        Instantiate(BuildMenu, transform);
+        //Instantiate(BuildMenu, transform);
     }
 }

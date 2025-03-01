@@ -4,9 +4,8 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - BaseMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  - HighlightMaterial: {instanceID: 0}
-  - BuildMenu: {instanceID: 0}
+  - BaseMaterial: {fileID: 2100000, guid: 1da263ad38460384c96b08d057e60acd, type: 2}
+  - HighlightMaterial: {fileID: 2100000, guid: d6ad34e89bf65794395030303b362946, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
