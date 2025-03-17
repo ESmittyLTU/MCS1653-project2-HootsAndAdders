@@ -11109,7 +11109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1234803018}
-  - component: {fileID: 1234803017}
+  - component: {fileID: 1234803019}
   m_Layer: 0
   m_Name: Path
   m_TagString: Untagged
@@ -11117,29 +11117,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1234803017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1234803016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1ea807d6e85f2b4c8def746eb1439ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Waypoints:
-  - {x: 7.37, y: -3.86, z: 0}
-  - {x: 7.37, y: -1.95, z: 0}
-  - {x: -6.52, y: -1.95, z: 0}
-  - {x: -6.52, y: 0.02, z: 0}
-  - {x: 5.37, y: 0.02, z: 0}
-  - {x: 5.37, y: 2.04, z: 0}
-  - {x: -5.5, y: 2.04, z: 0}
-  - {x: -5.5, y: 4.05, z: 0}
-  - {x: 10.68, y: 4.05, z: 0}
-  SegmentDistances: []
 --- !u!4 &1234803018
 Transform:
   m_ObjectHideFlags: 0
@@ -11155,6 +11132,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1234803019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234803016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce62aba069188ba47b39e16402369ad1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Waypoints:
+  - {x: 7.37, y: -3.86, z: 0}
+  - {x: 7.37, y: -1.95, z: 0}
+  - {x: -6.52, y: -1.95, z: 0}
+  - {x: -6.52, y: 0.02, z: 0}
+  - {x: 5.37, y: 0.02, z: 0}
+  - {x: 5.37, y: 2.04, z: 0}
+  - {x: -5.5, y: 2.04, z: 0}
+  - {x: -5.5, y: 4.05, z: 0}
+  - {x: 10.68, y: 4.05, z: 0}
 --- !u!1001 &1246512145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18729,7 +18728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7304760464770786903, guid: 84a3badc152171a44a9c8ce3bfc8a32a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

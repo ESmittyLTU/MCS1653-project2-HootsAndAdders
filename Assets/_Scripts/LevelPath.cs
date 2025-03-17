@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Path : MonoBehaviour
+public class LevelPath : MonoBehaviour
 {
     public Vector3[] Waypoints;
-    public float[] SegmentDistances;
+    //public float[] SegmentDistances;
 
     // Start is called before the first frame update
     void Start()

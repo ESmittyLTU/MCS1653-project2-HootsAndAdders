@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class Tower : MonoBehaviour
 {
@@ -11,7 +10,7 @@ public class Tower : MonoBehaviour
     public float shotDelay = 1f;
     public EnemyPathing target;
 
-    private Path path;
+    private MainPath levelPath;
     private Transform aimer;
     private float canShoot = 0;
     private float currentEnemyDistance;
@@ -19,7 +18,7 @@ public class Tower : MonoBehaviour
 
     void Start()
     {
-        path = GameObject.Find("Path").GetComponent<Path>();
+        levelPath = GameObject.Find("Path").GetComponent<MainPath>();
         aimer = transform.Find("Head");
         aimer.LookAt(new Vector3(-9.5f, -4f, aimer.transform.position.z));
     }
@@ -45,15 +44,15 @@ public class Tower : MonoBehaviour
                 if (target == null)
                 {
                     target = enemy;
-                    currentEnemyDistance = path.GetDistanceRemaining(target.transform.position, target.destination);
+                    currentEnemyDistance = levelPath.GetDistanceRemaining(target.transform.position, target.destination);
                     continue; // move on to next iteration
                 }
 
-                if (path.GetDistanceRemaining(enemy.transform.position, enemy.destination)
+                if (levelPath.GetDistanceRemaining(enemy.transform.position, enemy.destination)
                     < currentEnemyDistance)
                 {
                     target = enemy;
-                    currentEnemyDistance = path.GetDistanceRemaining(target.transform.position, target.destination);
+                    currentEnemyDistance = levelPath.GetDistanceRemaining(target.transform.position, target.destination);
                 }
             }
         }
