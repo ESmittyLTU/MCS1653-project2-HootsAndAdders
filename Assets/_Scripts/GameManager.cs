@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log($"Player health is now {health}");
+        Debug.Log($"Player health starting at {health}");
     }
 
     private void Update()

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyPathing : MonoBehaviour
 {
-    public Transform[] Waypoints;
+    public Path path;
     public int destination;
     public float speed = 2f, waypointRange = 0.01f;
 
@@ -13,41 +13,42 @@ public class EnemyPathing : MonoBehaviour
     // when position == current waypoint, set current waypoint to Waypoint[destination+1]
     // Chutes and ladders numbered numerically(1+0)
 
-
-
-
     void Start()
     {
         destination = 0;
+        path = GameObject.Find("Path").GetComponent<Path>();
     }
 
-    // Update is called once per frame
-    void Update()
+    //Protected tells it that this script and child scripts can use this code, Virtual allows child to override it as well
+    protected virtual void Update()
     {
         //If it reaches the end, subtract health
-        if (destination >= Waypoints.Length) {
+        if (destination >= path.Waypoints.Length) 
+        {
             GameManager.health--;
             Debug.Log($"Player health is now {GameManager.health}");
             Destroy(gameObject);
-        }
+        } 
 
         //Move torwards next waypoint
-        transform.position = Vector3.MoveTowards(transform.position, Waypoints[destination].position, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, path.Waypoints[destination], speed * Time.deltaTime);
         
         //The way I made the scene is wonky, so I have to use the overloaded versions of LookAt + modify child objects so that
         //when parent is rotated, child is facing right direction
         if (destination == 2 || destination == 3 || destination == 6 || destination == 7)
         {
-            transform.LookAt(Waypoints[destination], Vector3.down);
+            transform.LookAt(path.Waypoints[destination], Vector3.down);
         } 
         else
         {
-            transform.LookAt(Waypoints[destination], Vector3.up);
+            transform.LookAt(path.Waypoints[destination], Vector3.up);
         }
         
-        if (Vector3.Distance(transform.position, Waypoints[destination].position) <= waypointRange)
+        //If close to waypoint, select next waypoint
+        if (Vector3.Distance(transform.position, path.Waypoints[destination]) <= waypointRange)
         {
             destination++;
         }
+
     }
 }
