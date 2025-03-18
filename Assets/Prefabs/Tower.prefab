@@ -357,4 +357,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 4
   bullet: {fileID: 2699174929284532649, guid: 0898303cc4840424aa743b1b1696b9ea, type: 3}
-  shotDelay: 2.1
+  shotDelay: 1.5
+  target: {fileID: 0}
+  levelPath: {fileID: 0}

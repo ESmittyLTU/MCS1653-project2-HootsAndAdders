@@ -49,6 +49,7 @@ public class EnemyPathing : MonoBehaviour
 
             //The way I made the scene is wonky, so I have to use the overloaded versions of LookAt + modify child objects so that
             //when parent is rotated, child is facing right direction
+            /*
             if (destination == 2 || destination == 3 || destination == 6 || destination == 7)
             {
                 transform.LookAt(levelPath.Waypoints[destination], Vector3.down);
@@ -57,6 +58,7 @@ public class EnemyPathing : MonoBehaviour
             {
                 transform.LookAt(levelPath.Waypoints[destination], Vector3.up);
             }
+            */
 
             //If close to waypoint, select next waypoint
             if (Vector3.Distance(transform.position, levelPath.Waypoints[destination]) <= waypointRange)
