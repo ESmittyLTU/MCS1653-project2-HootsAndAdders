@@ -697,6 +697,7 @@ GameObject:
   - component: {fileID: 8030361531573342103}
   - component: {fileID: 3675153177903266422}
   - component: {fileID: 1412507969031602640}
+  - component: {fileID: 5202238163975987463}
   m_Layer: 0
   m_Name: AdvancedTowerButton
   m_TagString: Untagged
@@ -801,11 +802,36 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 3675153177903266422}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5202238163975987463}
+        m_TargetAssemblyTypeName: TowerButton, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5202238163975987463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6995663284570568813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1444d86e998a08445ba873a0ccc739c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TowerPrefab: {fileID: 9077484070803049604, guid: 7aa98eca3f290d54daf52a3d3156f841, type: 3}
 --- !u!1 &8064626407712070328
 GameObject:
   m_ObjectHideFlags: 0
