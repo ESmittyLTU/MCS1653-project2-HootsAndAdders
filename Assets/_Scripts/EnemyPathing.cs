@@ -8,6 +8,8 @@ public class EnemyPathing : MonoBehaviour
     public MainPath levelPath;
     public int destination;
     public float speed = 2f, waypointRange = 0.01f;
+    public bool onLadder = false;
+    public Vector3 ladderEnd;
 
     // Waypoints should be numbered from 0 to 10 (or max waypoints), not including ladders/chutes
     // when position == current waypoint, set current waypoint to Waypoint[destination+1]
@@ -16,15 +18,7 @@ public class EnemyPathing : MonoBehaviour
     void Start()
     {
         destination = 0;
-        GameObject obj = GameObject.Find("Path");
-        Debug.Log($"Path object name: {obj.transform.name}");
         levelPath = MainPath._path;
-        //levelPath = obj.GetComponent<MainPath>();
-        //if (levelPath != null)
-        //    Debug.Log($"Path component transform name: {levelPath.transform.name}");
-        //else
-        //    Debug.Log("Path is null");
-        //Debug.Log($"Waypoint count: {levelPath.Waypoints.Length}");
     }
 
     //Protected tells it that this script and child scripts can use this code, Virtual allows child to override it as well
@@ -38,8 +32,20 @@ public class EnemyPathing : MonoBehaviour
             Destroy(gameObject);
         }
         
-            //Move torwards next waypoint
+        //Move torwards next waypoint, but if on ladder, move torwards that endpoint
+        if (!onLadder)
+        {
             transform.position = Vector3.MoveTowards(transform.position, levelPath.Waypoints[destination], speed * Time.deltaTime);
+        } 
+        else
+        {
+            transform.position = Vector3.MoveTowards(transform.position, ladderEnd, speed * Time.deltaTime);
+        }
+            
+        if (Vector3.Distance(transform.position, ladderEnd) <= waypointRange)
+        {
+            onLadder = false;
+        }
 
             //The way I made the scene is wonky, so I have to use the overloaded versions of LookAt + modify child objects so that
             //when parent is rotated, child is facing right direction

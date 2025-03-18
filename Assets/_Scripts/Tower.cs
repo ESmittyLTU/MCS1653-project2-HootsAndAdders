@@ -9,8 +9,8 @@ public class Tower : MonoBehaviour
     public GameObject bullet;
     public float shotDelay = 1f;
     public EnemyPathing target;
+    public MainPath levelPath;
 
-    private MainPath levelPath;
     private Transform aimer;
     private float canShoot = 0;
     private float currentEnemyDistance;
@@ -18,7 +18,7 @@ public class Tower : MonoBehaviour
 
     void Start()
     {
-        levelPath = GameObject.Find("Path").GetComponent<MainPath>();
+        levelPath = MainPath._path;
         aimer = transform.Find("Head");
         aimer.LookAt(new Vector3(-9.5f, -4f, aimer.transform.position.z));
     }
@@ -58,9 +58,11 @@ public class Tower : MonoBehaviour
         }
 
         // Take the target's x and y but the aimer's Z so that when the aimer is looking around it doesnt bend through 3D space
-        targetPos = new Vector3(target.transform.position.x, target.transform.position.y, aimer.transform.position.z);
-        aimer.LookAt(targetPos);
-        
+        if (target != null)
+        {
+            targetPos = new Vector3(target.transform.position.x, target.transform.position.y, aimer.transform.position.z);
+            aimer.LookAt(targetPos);
+        }
 
         canShoot += Time.deltaTime;
         if (Vector3.Distance(transform.position, targetPos) <= range)

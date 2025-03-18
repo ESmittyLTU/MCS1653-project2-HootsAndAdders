@@ -6,6 +6,8 @@ public class Ladder : MonoBehaviour
 {
     public int nextWaypointIndex;
     public Vector3 endOfLadder;
+    public int travelChance = 2;
+    //Chance out of 10 that an enemy will travel, 2 being the 20%, and 10 being 100%
 
     private void Start()
     {
@@ -13,13 +15,19 @@ public class Ladder : MonoBehaviour
         Debug.Log(endOfLadder.ToString());
     }
 
-
-
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Triggered!");
         if (other.CompareTag("Enemy"))
         {
-            other.GetComponent<EnemyPathing>().destination = nextWaypointIndex;
+            if (Random.Range(0, 10) < 2)
+            {
+                Debug.Log("ITS AN ENEMY!");
+                EnemyPathing enemy = other.GetComponent<EnemyPathing>();
+                enemy.ladderEnd = endOfLadder;
+                enemy.onLadder = true;
+                enemy.destination = nextWaypointIndex;
+            }
         }
     }
 }
