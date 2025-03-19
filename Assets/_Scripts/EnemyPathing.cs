@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyPathing : MonoBehaviour
 {
     public MainPath levelPath;
-    public int destination;
+    public int destination = 0;
     public float speed = 2f, waypointRange = 0.01f;
     public bool onLadder = false;
     public Vector3 ladderEnd;
@@ -17,9 +17,16 @@ public class EnemyPathing : MonoBehaviour
 
     void Start()
     {
-        destination = 0;
         levelPath = MainPath._path;
     }
+
+    public void setValuesOnSpawn(bool ladder, Vector3 ladderDest, int dest)
+    {
+        onLadder = ladder;
+        ladderEnd = ladderDest;
+        destination = dest;
+    }
+
 
     //Protected tells it that this script and child scripts can use this code, Virtual allows child to override it as well
     protected virtual void Update()

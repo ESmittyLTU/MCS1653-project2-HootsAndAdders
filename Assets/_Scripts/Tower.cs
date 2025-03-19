@@ -67,7 +67,7 @@ public class Tower : MonoBehaviour
         canShoot += Time.deltaTime;
         if (Vector3.Distance(transform.position, targetPos) <= range)
         {
-            if (canShoot >= shotDelay)
+            if (canShoot >= shotDelay && target != null)
             {
                 Instantiate(bullet, aimer.position, aimer.GetChild(0).rotation);
                 canShoot = 0;

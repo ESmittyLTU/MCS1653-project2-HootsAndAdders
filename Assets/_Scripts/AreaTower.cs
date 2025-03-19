@@ -40,13 +40,23 @@ public class AreaTower : MonoBehaviour
                 //check if this target is in range
                 if (Vector3.Distance(transform.position, enemy.transform.position) <= range)
                 {
-                    //target = enemy;
-                    enemy.gameObject.GetComponent<EnemyHealth>().health--;
-                    if (enemy.gameObject.GetComponent<EnemyHealth>().health <= 0)
+                    //If its a bundle enemy, subtract from its health, otherwise, it is a regular enemy, then subtract from its health and check if it needs to be destroyed
+                    if (enemy.gameObject.GetComponent<BundleEnemy>() != null)
                     {
-                        Destroy(enemy.gameObject);
+                        enemy.gameObject.GetComponent<BundleEnemy>().health--;
+                        continue;
                     }
-                    continue; // move on to next iteration
+                    else
+                    {
+                        enemy.gameObject.GetComponent<EnemyHealth>().health--;
+
+                        //This only checks for base enemies or subclasses of EnemyHealth, my bundle enemy will handle itself
+                        if (enemy.gameObject.GetComponent<EnemyHealth>().health <= 0)
+                        {
+                            Destroy(enemy.gameObject);
+                        }
+                        continue; // move on to next iteration
+                    }
                 }
             }
             canShoot = 0;

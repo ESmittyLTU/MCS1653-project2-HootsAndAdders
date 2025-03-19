@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static int health = 10;
-    public GameObject enemy;
+    public GameObject enemy, bundleEnemy;
     public float spawnDelay = 2f;
 
     private float canSpawn;
@@ -20,7 +20,16 @@ public class GameManager : MonoBehaviour
         canSpawn += Time.deltaTime;
         if (canSpawn >= spawnDelay)
         {
-            Instantiate(enemy, new Vector3(-10.5f, -3.9f, 0), Quaternion.identity);
+            if (Random.Range(0, 10) < 2)
+            {
+                Instantiate(bundleEnemy, new Vector3(-10.5f, -3.9f, 0), Quaternion.identity);
+            }
+            else
+            {
+                //Instantiate(enemy, new Vector3(-10.5f, -3.9f, 0), Quaternion.identity);
+            }
+
+
             canSpawn = 0;
         }
     }

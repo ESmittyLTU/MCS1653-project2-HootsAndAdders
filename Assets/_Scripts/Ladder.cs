@@ -20,7 +20,7 @@ public class Ladder : MonoBehaviour
         Debug.Log("Triggered!");
         if (other.CompareTag("Enemy"))
         {
-            if (Random.Range(0, 10) < 2)
+            if (Random.Range(0, 10) < travelChance)
             {
                 Debug.Log("ITS AN ENEMY!");
                 EnemyPathing enemy = other.GetComponent<EnemyPathing>();
