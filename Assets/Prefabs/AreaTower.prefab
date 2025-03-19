@@ -214,8 +214,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ae95683b2ebd047b45326fc3d2c623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 2.5
-  shotDelay: 1
+  range: 2.25
+  shotDelay: 3
   target: {fileID: 0}
   levelPath: {fileID: 0}
   firingEffect: {fileID: 6519390330030586832, guid: d4e2f93c9619c2b48b07b192d79d89ed, type: 3}
+  basicDeath: {fileID: 8300000, guid: c1657eca6165df448a2effb06962b5b3, type: 3}

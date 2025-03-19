@@ -9,12 +9,13 @@ public class BundleEnemy : MonoBehaviour
     public int health = 3;
     public int spawnCount = 3;
     public float spawnInterval = 0.25f;
+    public AudioClip breakOpen;
 
     private Vector3 spawnPoint, ladderDest;
     private int destination;
     private bool onLadder = false;
     private EnemyPathing pathingScript;
-    private bool alreadySpawned;
+    private bool alreadySpawned = false;
 
     void Start()
     {
@@ -37,19 +38,16 @@ public class BundleEnemy : MonoBehaviour
         onLadder = pathingScript.onLadder;
         destination = pathingScript.destination;
         ladderDest = pathingScript.ladderEnd;
-        
+
+        AudioSource.PlayClipAtPoint(breakOpen, spawnPoint);
         Destroy(pathingScript);
 
-        if (!alreadySpawned)
+        for (int i = 0; i < spawnCount; i++)
         {
-            alreadySpawned = true;
-            for (int i = 0; i < spawnCount; i++)
+            Invoke("spawnSingleEnemy", spawnInterval * i);
+            if (i == spawnCount - 1)
             {
-                Invoke("spawnSingleEnemy", spawnInterval * i);
-                if (i == spawnCount - 1)
-                {
-                    Invoke("thisDies", spawnInterval * i);
-                }
+                Invoke("thisDies", spawnInterval * i);
             }
         }
     } 
@@ -67,8 +65,9 @@ public class BundleEnemy : MonoBehaviour
 
     void Update()
     {
-        if (health <= 0)
-        {   
+        if (health <= 0 && !alreadySpawned)
+        {
+            alreadySpawned = true;
             spawnEnemiesOnDeath();
         }
     }

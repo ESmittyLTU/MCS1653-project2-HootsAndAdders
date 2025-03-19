@@ -10,6 +10,7 @@ public class EnemyPathing : MonoBehaviour
     public float speed = 2f, waypointRange = 0.01f;
     public bool onLadder = false;
     public Vector3 ladderEnd;
+    public AudioClip eggCrack;
 
     // Waypoints should be numbered from 0 to 10 (or max waypoints), not including ladders/chutes
     // when position == current waypoint, set current waypoint to Waypoint[destination+1]
@@ -34,7 +35,15 @@ public class EnemyPathing : MonoBehaviour
         //If it reaches the end, subtract health
         if (destination >= levelPath.Waypoints.Length)
         {
-            GameManager.health--;
+            if (gameObject.GetComponent<BundleEnemy>() != null)
+            {
+                GameManager.health -= gameObject.GetComponent<BundleEnemy>().spawnCount + 1;
+            } else
+            {
+                GameManager.health--;
+            }
+            GameManager.livesCounter.SetText($"{GameManager.health}");
+            AudioSource.PlayClipAtPoint(eggCrack, levelPath.Waypoints[8]);
             Debug.Log($"Player health is now {GameManager.health}");
             Destroy(gameObject);
         }

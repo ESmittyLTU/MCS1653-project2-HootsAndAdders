@@ -155,10 +155,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelPath: {fileID: 0}
   destination: 0
-  speed: 4
+  speed: 3
   waypointRange: 0.01
   onLadder: 0
   ladderEnd: {x: 0, y: 0, z: 0}
+  eggCrack: {fileID: 8300000, guid: d709f05143eda51458f1d4bd9345ce6c, type: 3}
 --- !u!114 &-8967263201512911655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,6 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  basicDeath: {fileID: 8300000, guid: c1657eca6165df448a2effb06962b5b3, type: 3}
 --- !u!54 &-7339562555699421984
 Rigidbody:
   m_ObjectHideFlags: 0

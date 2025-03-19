@@ -30,7 +30,32 @@
 
 3. **Any assets used that you didn't create yourself?** <br> (art, music, etc. Just tell us where you got it, link it here)
 
+Egg png:
+https://www.cleanpng.com/png-egg-7847601/
 
+Main music:
+Music by: Bensound
+License code: 5XWGSCPJUARO7CBR
+
+death sound effect:
+https://www.youtube.com/watch?v=KhYD3swHfPc&ab_channel=YTSFX
+
+Alternate death sound effect:
+Cloud Poof by qubodup -- https://freesound.org/s/714258/ -- License: Attribution 4.0
+cloud-punch.wav by CaptainYulef -- https://freesound.org/s/641241/ -- License: Creative Commons 0
+Gas Cloud.wav by puppetmaster685719 -- https://freesound.org/s/627733/ -- License: Creative Commons 0
+Poof in cloud by Mateusz_Chenc -- https://freesound.org/s/512217/ -- License: Creative Commons 0
+Poof.wav by ryansitz -- https://freesound.org/s/387834/ -- License: Creative Commons 0
+explosionsfx.wav by OtisJames -- https://freesound.org/s/249613/ -- License: Creative Commons 0
+
+Death music:
+Desert Snake by code_box -- https://freesound.org/s/651670/ -- License: Creative Commons 0
+
+Intro music:
+rattlesnake intro loop.wav by zagi2 -- https://freesound.org/s/195939/ -- License: Attribution NonCommercial 4.0
+
+Egg crack:
+egg shell crack by cupido-1 -- https://freesound.org/s/787415/ -- License: Creative Commons 0
 
 <br>
 

@@ -9,6 +9,7 @@ public class AreaTower : MonoBehaviour
     public EnemyPathing target;
     public MainPath levelPath;
     public GameObject firingEffect;
+    public AudioClip basicDeath;
 
     private float canShoot = 0;
     private float currentEnemyDistance;
@@ -53,6 +54,7 @@ public class AreaTower : MonoBehaviour
                         //This only checks for base enemies or subclasses of EnemyHealth, my bundle enemy will handle itself
                         if (enemy.gameObject.GetComponent<EnemyHealth>().health <= 0)
                         {
+                            AudioSource.PlayClipAtPoint(basicDeath, enemy.transform.position);
                             Destroy(enemy.gameObject);
                         }
                         continue; // move on to next iteration
