@@ -6,6 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
     public int health = 1;
     public AudioClip basicDeath;
+    public GameObject featherExplosion;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -15,6 +16,7 @@ public class EnemyHealth : MonoBehaviour
             Destroy(other.gameObject);
             if (health <= 0)
             {
+                Instantiate(featherExplosion, transform.position, Quaternion.identity);
                 AudioSource.PlayClipAtPoint(basicDeath, transform.position);
                 Destroy(gameObject);
             }

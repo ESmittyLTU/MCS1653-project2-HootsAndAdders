@@ -219,4 +219,5 @@ MonoBehaviour:
   target: {fileID: 0}
   levelPath: {fileID: 0}
   firingEffect: {fileID: 6519390330030586832, guid: d4e2f93c9619c2b48b07b192d79d89ed, type: 3}
+  featherExplosion: {fileID: 6519390330030586832, guid: 6a42227e5a97ae149af8268e27d45294, type: 3}
   basicDeath: {fileID: 8300000, guid: c1657eca6165df448a2effb06962b5b3, type: 3}

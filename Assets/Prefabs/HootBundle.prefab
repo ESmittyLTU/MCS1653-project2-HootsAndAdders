@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1823018493907428883}
   - component: {fileID: 188021321565933871}
+  - component: {fileID: 1061132636908418275}
   m_Layer: 0
   m_Name: HootSprite
   m_TagString: Untagged
@@ -26,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 3386439121454032156}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.5}
-  m_LocalScale: {x: 0.73, y: 0.85, z: 0.72999996}
+  m_LocalPosition: {x: 0, y: -0.02, z: -1.5}
+  m_LocalScale: {x: 3.72, y: 4.02, z: 4.02}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8679276479508735189}
@@ -73,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 1, g: 0.6434612, b: 0.33333337, a: 1}
+  m_Sprite: {fileID: -799948363, guid: dd4d7f96221f2cf409be0688d232a0a9, type: 3}
+  m_Color: {r: 1, g: 0.9722253, b: 0.9481132, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -84,6 +85,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1061132636908418275
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3386439121454032156}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c9c75c1036ac79a40975f6f98f01e72a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8971439986374916234
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,7 +122,7 @@ GameObject:
   m_Layer: 0
   m_Name: HootBundle
   m_TagString: Enemy
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -155,7 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelPath: {fileID: 0}
   destination: 0
-  speed: 1.75
+  speed: 2.5
   waypointRange: 0.01
   onLadder: 0
   ladderEnd: {x: 0, y: 0, z: 0}
@@ -200,6 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basicEnemy: {fileID: 7304760464770786903, guid: 84a3badc152171a44a9c8ce3bfc8a32a, type: 3}
+  featherExplosion: {fileID: 6519390330030586832, guid: 6a42227e5a97ae149af8268e27d45294, type: 3}
   health: 3
   spawnCount: 3
   spawnInterval: 0.25

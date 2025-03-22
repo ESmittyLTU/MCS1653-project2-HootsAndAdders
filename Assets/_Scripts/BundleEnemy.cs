@@ -5,7 +5,7 @@ using UnityEngine.Apple;
 
 public class BundleEnemy : MonoBehaviour
 {
-    public GameObject basicEnemy;
+    public GameObject basicEnemy, featherExplosion;
     public int health = 3;
     public int spawnCount = 3;
     public float spawnInterval = 0.25f;
@@ -39,6 +39,7 @@ public class BundleEnemy : MonoBehaviour
         destination = pathingScript.destination;
         ladderDest = pathingScript.ladderEnd;
 
+        Instantiate(featherExplosion, transform.position, Quaternion.identity);
         AudioSource.PlayClipAtPoint(breakOpen, spawnPoint);
         Destroy(pathingScript);
 
@@ -61,6 +62,7 @@ public class BundleEnemy : MonoBehaviour
     {
         GameObject spawnedEnemy = Instantiate(basicEnemy, spawnPoint, Quaternion.identity);
         spawnedEnemy.GetComponent<EnemyPathing>().setValuesOnSpawn(onLadder, ladderDest, destination);
+        spawnedEnemy.transform.localScale = new Vector3(.7f, .7f, 1f);
     }
 
     void Update()

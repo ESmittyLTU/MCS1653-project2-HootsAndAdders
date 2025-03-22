@@ -11,18 +11,19 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI livesCount;
     public GameObject enemy, bundleEnemy;
     public float spawnDelay = 2f;
-    public static TextMeshProUGUI livesCounter;
+    public static TextMeshProUGUI livesCounter, moneyCounter;
     public GameObject deathScreen, winScreen;
     public static int health = 10;
     public int[] enemyWaves;
     public bool[] isWaveBundle;
     public float initialDelay = 15f;
     public AudioClip winSong, loseSong;
+    public static int money;
 
     private bool preRound = true;
     private int wave = 0;
     private EnemyPathing[] enemies;
-    private bool roundOver, wonRound = false;
+    private bool noMoreSpawning, wonRound = false;
     private bool runWave = false;
 
     private void Start()
@@ -72,7 +73,7 @@ public class GameManager : MonoBehaviour
         if (wave == enemyWaves.Length - 1)
         {
             runWave = false;
-            roundOver = true;
+            noMoreSpawning = true;
         } else
         {
             wave++;
@@ -111,7 +112,7 @@ public class GameManager : MonoBehaviour
         }
         
         //Win condition
-        if (roundOver && health > 0)
+        if (noMoreSpawning && health > 0 && !wonRound)
         {
             enemies = FindObjectsOfType<EnemyPathing>();
             if (enemies.Length <= 0)
@@ -125,8 +126,9 @@ public class GameManager : MonoBehaviour
         }
 
         //Lose condition
-        if (health <= 0 && wonRound == false)
+        if (health <= 0 && !wonRound)
         {
+            wonRound = true;
             AudioSource.PlayClipAtPoint(loseSong, transform.position);
             GameObject.Find("Main Camera").GetComponent<AudioSource>().Stop();
             Debug.Log("YOU LOSE");

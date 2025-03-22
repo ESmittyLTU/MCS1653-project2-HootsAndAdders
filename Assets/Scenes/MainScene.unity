@@ -16825,8 +16825,8 @@ MonoBehaviour:
   spawnDelay: 0.5
   deathScreen: {fileID: 1224268556}
   winScreen: {fileID: 1439150209}
-  enemyWaves: 0700000001000000050000000200000007000000
-  isWaveBundle: 0001000100
+  enemyWaves: 0f0000000200000005000000040000001400000002000000
+  isWaveBundle: 000100010001
   initialDelay: 15
   winSong: {fileID: 8300000, guid: a4d0c5e83bd73074582b32468da4a43d, type: 3}
   loseSong: {fileID: 8300000, guid: 6015b778a73681145b2520d2b6c5479d, type: 3}
