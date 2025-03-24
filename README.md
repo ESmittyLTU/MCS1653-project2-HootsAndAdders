@@ -18,13 +18,19 @@
 
 1. **What are the controls to your game? How do we play?**
 
+Left-click to place towers
 
+Escape to pause the game
+
+Place towers strategically to prevent 6 waves of hoots from getting to your Adder's eggs!
+
+If you let 10 eggs get eaten, you lose.
 
 <br>
 
 2. **What creative additions did you make? How can we find them?**
 
-
+Everything except for a couple of transparent pngs and the sound effects
 
 <br>
 
@@ -39,6 +45,15 @@ https://www.cleanpng.com/png-egg-7847601/
 Main music:
 Music by: Bensound
 License code: 5XWGSCPJUARO7CBR
+
+ding:
+https://www.youtube.com/watch?v=GVAF07-2Xic&ab_channel=GamingSoundFX
+
+AoE tower build sound:
+electric_wire_01.wav by Glaneur de sons -- https://freesound.org/s/34168/ -- License: Attribution 4.0
+
+Tower build sound:
+Metal thud.WAV by DDT197 -- https://freesound.org/s/445775/ -- License: Creative Commons 0
 
 death sound effect:
 https://www.youtube.com/watch?v=KhYD3swHfPc&ab_channel=YTSFX
@@ -64,31 +79,31 @@ egg shell crack by cupido-1 -- https://freesound.org/s/787415/ -- License: Creat
 
 4. **Did you receive help from anyone outside this class?** <br> (list their names and what they helped with)
 
-
+No
 
 <br>
 
 5. **Did you get help from any AI Code Assistants?** <br> (Tell us which .cs file to look in for the citation and describe what you learned)
 
-
+No
 
 <br>
 
 6. **Did you get help from any online websites, videos, or tutorials?** <br> (link them here)
 
-
+Yes, various unity forums for small things, but no outright tutorials
 
 <br>
 
 7. **What trouble did you have with this project?**
 
-
+I named things a bit too ambiguously, and in one situation I had to learn about singletons to reference a script properly.
 
 <br>
 
 8. **Is there anything else we should know?**
 
-
+Eli Smith made this project.
 
 
 <br><br><br><br><br>

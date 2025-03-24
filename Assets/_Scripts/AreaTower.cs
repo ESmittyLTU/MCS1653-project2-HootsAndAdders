@@ -11,6 +11,7 @@ public class AreaTower : MonoBehaviour
     public GameObject firingEffect, featherExplosion;
     public AudioClip basicDeath;
 
+    private bool oneInRange;
     private float canShoot = 0;
     private float currentEnemyDistance;
     private Vector3 targetPos;
@@ -32,15 +33,30 @@ public class AreaTower : MonoBehaviour
 
         //if no target currently selected
         //target = null;
+        foreach (EnemyPathing enemy in possibleTargets)
+        {
+            //check if a SINGLE target is in range
+            if (Vector3.Distance(transform.position, enemy.transform.position) <= range)
+            {
+                oneInRange = true;
+                break;
+            } else
+            {
+                oneInRange = false;
+            }
+        }
 
         canShoot += Time.deltaTime;
-        if (canShoot >= shotDelay)
+        if (canShoot >= shotDelay & oneInRange)
         {
+            canShoot = 0;
+            Instantiate(firingEffect, new Vector3(transform.position.x, transform.position.y, -2f), Quaternion.identity);
             foreach (EnemyPathing enemy in possibleTargets)
             {
                 //check if this target is in range
                 if (Vector3.Distance(transform.position, enemy.transform.position) <= range)
                 {
+                    
                     //If its a bundle enemy, subtract from its health, otherwise, it is a regular enemy, then subtract from its health and check if it needs to be destroyed
                     if (enemy.gameObject.GetComponent<BundleEnemy>() != null)
                     {
@@ -54,6 +70,8 @@ public class AreaTower : MonoBehaviour
                         //This only checks for base enemies or subclasses of EnemyHealth, my bundle enemy will handle itself
                         if (enemy.gameObject.GetComponent<EnemyHealth>().health <= 0)
                         {
+                            GameManager.money++;
+                            GameManager.moneyCounter.SetText($"{GameManager.money}");
                             Instantiate(featherExplosion, enemy.transform.position, Quaternion.identity);
                             AudioSource.PlayClipAtPoint(basicDeath, enemy.transform.position);
                             Destroy(enemy.gameObject);
@@ -62,8 +80,7 @@ public class AreaTower : MonoBehaviour
                     }
                 }
             }
-            canShoot = 0;
-            Instantiate(firingEffect, new Vector3 (transform.position.x, transform.position.y, -2f), Quaternion.identity);
+            
         }
     }
 }

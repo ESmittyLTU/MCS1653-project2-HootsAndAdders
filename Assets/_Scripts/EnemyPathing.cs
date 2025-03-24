@@ -37,7 +37,7 @@ public class EnemyPathing : MonoBehaviour
         {
             if (gameObject.GetComponent<BundleEnemy>() != null)
             {
-                GameManager.health -= gameObject.GetComponent<BundleEnemy>().spawnCount + 1;
+                GameManager.health -= 3;
             } else
             {
                 GameManager.health--;

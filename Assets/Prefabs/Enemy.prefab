@@ -177,7 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelPath: {fileID: 0}
   destination: 0
-  speed: 4
+  speed: 3
   waypointRange: 0.01
   onLadder: 0
   ladderEnd: {x: 0, y: 0, z: 0}

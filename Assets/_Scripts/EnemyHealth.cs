@@ -18,6 +18,8 @@ public class EnemyHealth : MonoBehaviour
             {
                 Instantiate(featherExplosion, transform.position, Quaternion.identity);
                 AudioSource.PlayClipAtPoint(basicDeath, transform.position);
+                GameManager.money++;
+                GameManager.moneyCounter.SetText($"{GameManager.money}");
                 Destroy(gameObject);
             }
         }
